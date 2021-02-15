@@ -22,10 +22,13 @@ p {
         color: $black;
 }
 a:visited {
-        color: $white;
+        color: $black;
+}
+a:hover {
+        color: #0048CD;
 }
 .jumbotron {
-        background: #0048CD;
+        background: #FFFFFF;
         color: $black;
         text-align: center;
         p {

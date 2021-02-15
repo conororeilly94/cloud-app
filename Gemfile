@@ -29,6 +29,13 @@ gem 'jbuilder', '~> 2.7'
 # LOGIN FUNCTION
 gem "devise"
 
+# Image Uploads to Amazon S3
+gem 'carrierwave', "0.10.0"
+gem 'fog', '~> 1.37.0'
+
+# Image resizing
+gem 'mini_magick'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

@@ -10,20 +10,29 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-  <%# <% if ["public", "devise"].include?(controller.controller_name) %>
+  <body id="<%= controller.controller_name %>" class="<%= controller.action_name %>">
+    <% if ["public", "devise", "sessions"].include?(controller.controller_name) %>
     <header>
       <%= render "layouts/nav/public" %>
+      <%= yield %>
     </header>
-    <%# <% else %> <%# %>
-      <%# <%= render "layouts/nav/dashboard" %> <%# %>
-    <%#  <% end %> <%# %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% else %>  %>
+      <%= render "layouts/nav/dashboard" %>
+      <div class="container-fluid">
+        <div class="row">
+          <%= render "layouts/nav/sidebar" %>
+          <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 mt-3">
+            <%= yield %>
+          </main>
+        </div>
+      </div>          
+    <% end %> 
 
-    <%= yield %>
+    <%# <%= render "layouts/footer" %> %>
+    <div id="notifications"><%= notice %></div>
 
-    <%= render "layouts/footer" %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script>feather.replace()</script>
 
   </body>
 </html>
