@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   get "/dashboard" => 'dashboard#index', as: "dashboard"
   get 'dashboard/properties'
   get 'dashboard/reports'

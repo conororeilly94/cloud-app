@@ -23,4 +23,11 @@
   <%= @property.bathrooms %>
 </p>
 
+<p>
+    <strong>Created By: </strong>
+    </br>
+    <%= @property.account.first_name + ' ' + @property.account.last_name %>
+  </p>
+
 <%= link_to 'Edit Property', edit_property_path(@property), class: "btn btn-success" %>
+<%= link_to 'Back', properties_path, class: 'btn btn-danger' %>

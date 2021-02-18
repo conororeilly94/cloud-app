@@ -11,7 +11,7 @@
   </head>
 
   <body id="<%= controller.controller_name %>" class="<%= controller.action_name %>">
-    <% if ["public", "devise", "sessions"].include?(controller.controller_name) %>
+    <% if ["public", "devise", "sessions", "registrations", "confirmations", "passwords"].include?(controller.controller_name) %>
     <header>
       <%= render "layouts/nav/public" %>
       <%= yield %>
@@ -28,7 +28,7 @@
       </div>          
     <% end %> 
 
-    <%# <%= render "layouts/footer" %> %>
+    <%# <%= render "layouts/footer" %>
     <div id="notifications"><%= notice %></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>

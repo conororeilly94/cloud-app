@@ -23,3 +23,7 @@ Things you may want to cover:
 
 * ...
 # cloud-app
+
+* Main home page -> app/views/public/main.html
+
+* Header -> app/views/layout/nav/public
