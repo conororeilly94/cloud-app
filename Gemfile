@@ -30,11 +30,11 @@ gem 'jbuilder', '~> 2.7'
 gem "devise"
 
 # Image Uploads to Amazon S3
-gem 'carrierwave', "0.10.0"
+gem 'carrierwave', '~> 0.10.0'
 gem 'fog', '~> 1.37.0'
 
 # Image resizing
-gem 'mini_magick'
+gem 'mini_magick', '~> 4.3'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -53,6 +53,7 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'figaro'
 end
 
 group :test do
