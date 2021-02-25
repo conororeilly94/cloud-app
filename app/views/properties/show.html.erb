@@ -1,38 +1,44 @@
-<p>
-  <strong>Name:</strong>
-  <%= @property.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @property.address %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @property.price %>
-</p>
-
-<p>
-  <strong>Rooms:</strong>
-  <%= @property.rooms %>
-</p>
-
-<p>
-  <strong>Bathrooms:</strong>
-  <%= @property.bathrooms %>
-</p>
-
-<div style="width:400px; height:auto">
+<div style="width:100%; height:100%; text-align:center">
   <%= link_to image_tag(@property.image), properties_path %>
 </div>
 </br>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <p>
+        <strong>Name:</strong>
+        <%= @property.name %>
+      </p>
 
-<p>
-    <strong>Created By: </strong>
-    </br>
-    <%= @property.account.first_name + ' ' + @property.account.last_name %>
-  </p>
+      <p>
+        <strong>Address:</strong>
+        <%= @property.address %>
+      </p>
 
-<%= link_to 'Edit Property', edit_property_path(@property), class: "btn btn-success" %>
-<%= link_to 'Back', properties_path, class: 'btn btn-danger' %>
+      <p>
+        <strong>Price:</strong>
+        <%= @property.price %>
+      </p>
+
+      <p>
+        <strong>Rooms:</strong>
+        <%= @property.rooms %>
+      </p>
+
+      <p>
+        <strong>Bathrooms:</strong>
+        <%= @property.bathrooms %>
+      </p>
+      </div>
+
+      <p>
+      <div class="col-4">
+        <%= render "properties/agent_details" %>
+        <%# <%= @property.account.first_name + ' ' + @property.account.last_name %>
+      </p>
+
+      <%# <%= link_to 'Edit Property', edit_property_path(@property), class: "btn btn-success" %>
+      <%# <%= link_to 'Back', properties_path, class: 'btn btn-danger' %>
+    
+  </div>
+</div>
