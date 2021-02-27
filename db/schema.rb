@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_24_202807) do
+ActiveRecord::Schema.define(version: 2021_02_27_175852) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "first_name", default: "", null: false
@@ -32,7 +32,9 @@ ActiveRecord::Schema.define(version: 2021_02_24_202807) do
     t.string "unconfirmed_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    d.string "company"
     t.boolean "admin", default: false
+    t.string "image"
     t.index ["email"], name: "index_accounts_on_email", unique: true
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
   end
@@ -84,6 +86,8 @@ ActiveRecord::Schema.define(version: 2021_02_24_202807) do
     t.string "photo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "parking_spaces", default: 0
+    t.text "details"
     t.index ["account_id"], name: "index_properties_on_account_id"
   end
 

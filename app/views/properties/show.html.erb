@@ -5,40 +5,60 @@
 <div class="container">
   <div class="row">
     <div class="col-8">
-      <p>
-        <strong>Name:</strong>
-        <%= @property.name %>
-      </p>
-
-      <p>
-        <strong>Address:</strong>
-        <%= @property.address %>
-      </p>
-
-      <p>
-        <strong>Price:</strong>
-        <%= @property.price %>
-      </p>
-
-      <p>
-        <strong>Rooms:</strong>
-        <%= @property.rooms %>
-      </p>
-
-      <p>
-        <strong>Bathrooms:</strong>
-        <%= @property.bathrooms %>
-      </p>
+      <div class="row">
+        <div class="col-6">
+          <p class="mb-0"><%= @property.address %></p>
+          <p class="h2"><%= @property.price > 0 ? number_to_currency(@property.price, precision: 0) : "For Sale" %></p>
+        </div>
+        <div class="col-6 text-center">
+          <div class="row mr-3 bg-light p-3">
+            <div class="col-4">
+              <p class="m-0"><strong>Bedrooms</strong></p>
+              <span class="lead"><%= @property.rooms %></span>
+            </div>
+            <div class="col-4">
+              <p class="m-0"><strong>Bathrooms</strong></p>
+              <span class="lead"><%= @property.bathrooms %></span>
+            </div>
+            <div class="col-4">
+              <p class="m-0"><strong>Parking</strong></p>
+              <span class="lead"><%= @property.parking_spaces %></span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <p>
-      <div class="col-4">
-        <%= render "properties/agent_details" %>
-        <%# <%= @property.account.first_name + ' ' + @property.account.last_name %>
-      </p>
+    <div class="row border-top border-bottom mt-5 mb-4 pt-4 pb-4">
+      <div class="col-6">
+        <strong><%= link_to "Est. Monthly Repayments of #{ number_to_currency((@property.price - (@property.price * 0.1)) / 360, precision: 0) } *", "#", class: "text-success" %></strong>
+      </div>
 
-      <%# <%= link_to 'Edit Property', edit_property_path(@property), class: "btn btn-success" %>
-      <%# <%= link_to 'Back', properties_path, class: 'btn btn-danger' %>
-    
-  </div>
+      <div class="col-6 text-right">
+        <strong><%= link_to "Can I Afford this Property?", "#", class: "text-success" %></strong>
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="col">
+        <p class="h3"><%= @property.name %></p>
+          <p class="h5">Property Description</p>          
+
+          <div id="prop-details" class="mb-5">
+          <%= @property.details %>
+          </div>
+
+          <button class="btn btn-outline-info mt-3" id="toggleDetails">Show Me</button>
+
+          <p class="mt-5">This rate is based on a 30 year mortgage, after paying an initial 10% downpayment</p>
+        </div>
+      </div>
+    </div>
+       
+    <div class="col-4">
+      <%= render "properties/agent_details" %>
+      <%# <%= @property.account.first_name + ' ' + @property.account.last_name %>
+    </div>
+  <%# <%= link_to 'Edit Property', edit_property_path(@property), class: "btn btn-success" %>
+  <%# <%= link_to 'Back', properties_path, class: 'btn btn-danger' %>
+
 </div>
