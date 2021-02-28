@@ -10,8 +10,8 @@ class Account < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
-  def company
-    "Test"
-  end
+  # def company
+  #   "#{company}"
+  # end
 
 end

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
     def configure_permitted_parameters
         # Information from our db/migrate schema
-        devise_parameter_sanitizer.permit(:update, keys: [:first_name, :last_name, :url])
+        devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :url])
         devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
     end
 end
