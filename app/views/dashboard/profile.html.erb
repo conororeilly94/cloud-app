@@ -1,1 +1,78 @@
-<p><%= @account.full_name %></p>
+<%# <div style="background-size: cover; height:100%; text-align:center">
+  <%= link_to image_tag(@property.image), properties_path %>
+<%# </div> %> 
+</br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="row">
+        <div class="col-lg-6">
+          <p class="h4 mb-0"><%= @account.full_name %></p>            
+        </div>
+        <div class="col-lg-6 text-center">
+          <div class="row mr-lg-3 mt-sm-3 bg-light p-3">
+            <div class="col-3">
+              <p class="m-0"><strong>Sold</strong></p>
+              <span class="lead"><%= @properties_sold %></span>
+            </div>
+            <div class="col-3">
+              <p class="m-0"><strong>For Sale</strong></p>
+              <span class="lead"><%= @properties_for_sale %></span>
+            </div>
+            <div class="col-3">
+              <p class="m-0"><strong>Leased</strong></p>
+              <span class="lead"><%= @properties_leased %></span>
+            </div>
+            <div class="col-3">
+              <p class="m-0"><strong>For Rent</strong></p>
+              <span class="lead"><%= @properties_for_rent %></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="row border-top border-bottom mt-5 mb-4 pt-4 pb-4">
+      <div class="col-6">
+        Properties
+      </div>
+
+      <div class="col-6 text-right">
+        <strong><%= link_to "Can I Afford this Property?", "#", class: "text-success" %></strong>
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="col">
+          <p class="h5">Property Description</p>          
+
+          <div id="prop-details" class="mb-5">
+          <%= @account.details %>
+          </div>
+
+          <button class="btn btn-outline-info mt-3" id="toggleDetails">Show More</button>
+
+          </div>
+      </div>
+    </div>
+       
+    <div class="col-sm-4">
+      <%= render "properties/agent_details", agent: @account %>
+      <%# <%= @property.account.first_name + ' ' + @property.account.last_name %>
+    </div>
+  <%# <%= link_to 'Edit Property', edit_property_path(@property), class: "btn btn-success" %>
+  <%# <%= link_to 'Back', properties_path, class: 'btn btn-danger' %>
+
+</div>
+
+<section class="mt-5 mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p class="h3 mb-3">Current listings by this agent</p>
+        </div>
+      <%= render "properties/list", properties: @properties %>
+      </div>
+    </div>
+  </section>
+
+<%= render "properties/send_email_modal", agent: @account %>

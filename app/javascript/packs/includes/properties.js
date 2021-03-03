@@ -1,5 +1,4 @@
-$(function(){
-    // 18.00 P2    
+$(function(){  
 
     $("#show-tel").on("click", function(){
         var $this = $(this);

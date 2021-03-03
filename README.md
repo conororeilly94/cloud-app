@@ -27,3 +27,7 @@ Things you may want to cover:
 * Main home page -> app/views/public/main.html
 
 * Header -> app/views/layout/nav/public
+
+
+*************************
+ADMIN = ADMINISTRATOR
