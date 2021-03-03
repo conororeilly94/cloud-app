@@ -59,7 +59,9 @@
 
           <button class="btn btn-outline-info mt-3" id="toggleDetails">Show More</button>
 
-          <p class="mt-5">This rate is based on a 30 year mortgage, after paying an initial 10% downpayment</p>
+          <% if @property.for_sale %>
+            <p class="mt-5">This rate is based on a 30 year mortgage, after paying an initial 10% downpayment</p>
+          <% end %>
         </div>
       </div>
     </div>
@@ -84,3 +86,5 @@
       </div>
     </div>
   </section>
+
+<%= render "properties/send_email_modal" %>
