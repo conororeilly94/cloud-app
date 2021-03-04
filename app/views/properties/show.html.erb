@@ -1,4 +1,4 @@
-<div style="background-size: cover; height:100%; text-align:center">
+<div id="property-banner" style="background-size: cover; height:100%; text-align:center">
   <%= link_to image_tag(@property.image), properties_path %>
 </div>
 </br>
@@ -67,7 +67,7 @@
     </div>
        
     <div class="col-sm-4">
-      <%= render "properties/agent_details", agent: @agent %>
+      <%= render "properties/agent_details" %>
       <iframe class="ml-lg-4 mt-3" width="320" height="240" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBwOWZ_C1sw6lYJhxYk_LJJCI2uM9GW8IA&q=<%= @property.address.to_param %>" allowfullscreen></iframe>
       <%# <%= @property.account.first_name + ' ' + @property.account.last_name %>
     </div>

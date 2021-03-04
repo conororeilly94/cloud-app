@@ -1,0 +1,9 @@
+// Place all the styles related to the Blogposts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#blog-banner .jumbotron {
+    background: image-url("banners/blog.jpg") no-repeat center center;
+    background-size: cover;
+    color: #fff;
+}

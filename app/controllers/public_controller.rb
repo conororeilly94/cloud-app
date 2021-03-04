@@ -6,5 +6,6 @@ class PublicController < ApplicationController
     end
 
     @properties = Property.latest
+    @blogposts = Blogpost.latest
   end
 end

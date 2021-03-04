@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_232118) do
+ActiveRecord::Schema.define(version: 2021_03_04_194525) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "first_name", default: "", null: false
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_03_03_232118) do
     t.string "telephone"
     t.boolean "administrator", default: false
     t.text "details"
+    t.string "cover_image"
     t.index ["email"], name: "index_accounts_on_email", unique: true
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
   end
@@ -67,6 +68,17 @@ ActiveRecord::Schema.define(version: 2021_03_03_232118) do
     t.integer "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "blogposts", force: :cascade do |t|
+    t.string "title"
+    t.string "url"
+    t.string "summary"
+    t.text "body"
+    t.string "image"
+    t.boolean "active", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "posts", force: :cascade do |t|

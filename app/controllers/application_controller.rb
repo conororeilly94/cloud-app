@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
 
     def configure_permitted_parameters
         # Information from our db/migrate schema
-        devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :url, :telephone])
+        @show_sidebar = true if account_signed_in?
+        devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :details, :url, :telephone, :cover_image])
         devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
     end
 end

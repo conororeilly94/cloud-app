@@ -10,3 +10,12 @@ body {
     padding-top: 36px;
 }
 
+#home-banner .jumbotron {
+    background: image-url("banners/home1.jpg") no-repeat center center;
+    background-size: cover;
+    color: #fff;
+
+    h1, p {
+    text-shadow: 1px 1px 1px #777;
+    }
+}

@@ -1,0 +1,26 @@
+<main role="main" id="blog-banner">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-4">Latest Blog Posts</h1>
+      <p>Stay up to date with the latest property news at Property Scanner</p>
+    </div>
+  </div>
+</main>
+
+<div class="container">
+    <% if @blogposts.empty? %>
+        <p>No posts to display</p>
+    <% else %>
+        <% @blogposts.each do |blogpost| %>
+            <div class="row">
+                <div class="col">
+                    <h2><%= blogpost.title %></h2>
+                    <p><%= blogpost.summary %></p>
+                    <%= link_to "Read more", blogpost_path(blogpost), class: "btn btn-success" %>
+                </div>
+            </div>
+        <% end %>
+    <% end %>
+</div>

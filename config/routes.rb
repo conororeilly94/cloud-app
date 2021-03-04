@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  resources :blogposts
   resources :posts
   devise_for :accounts
   resources :properties
+
+  get "/blog" => "blogposts#latest", as: :blog
 
   # Admin Routes
   get "/accounts" => 'admin#accounts', as: :accounts

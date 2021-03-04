@@ -1,0 +1,15 @@
+<div class="text-center">
+
+    <h3 class="h4 mt-2 mb-2"><%= agent.full_name %></h3>
+    <%# <p><%= @agent.company %>
+
+    <div class="row justify-content-md-center">
+        <div class="col-md-10">
+            <button class="btn btn-block btn-info text-uppercase mb-1" id="show-tel" data-telephone="<%= agent.telephone %>"><i class="mr-2" data-feather="phone-call"></i> <span> Call </span></button>
+        </div>
+
+        <div class="col-md-10">
+            <button class="btn btn-block btn-success text-uppercase" data-toggle="modal" data-target="#contact-modal" ><i class="mr-2" data-feather="mail"></i><span>Email</span></button>
+        </div>
+    </div>
+</div>

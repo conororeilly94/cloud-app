@@ -6,13 +6,28 @@
 </p>
 
 <p>
+  <strong>Url:</strong>
+  <%= @post.url %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @post.summary %>
+</p>
+
+<p>
   <strong>Body:</strong>
   <%= @post.body %>
 </p>
 
 <p>
-  <strong>Account:</strong>
-  <%= @post.account_id %>
+  <strong>Image:</strong>
+  <%= @post.image %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @post.active %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

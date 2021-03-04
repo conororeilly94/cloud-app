@@ -1,0 +1,16 @@
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-4"><%= @blogpost.title %></h1>
+      <p class="text-muted pl-2"><em>Created <%= time_ago_in_words @blogpost.created_at %></em></p>
+    </div>
+  </div>
+</main>
+
+<div class="container">    
+    <%= simple_format @blogpost.body %>
+
+    <p><%= link_to "View latest blog posts", blog_path, class: "btn btn-success" %></p>
+</div>

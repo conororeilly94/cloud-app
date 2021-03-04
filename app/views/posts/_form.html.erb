@@ -17,13 +17,28 @@
   </div>
 
   <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :summary %>
+    <%= form.text_field :summary %>
+  </div>
+
+  <div class="field">
     <%= form.label :body %>
     <%= form.text_area :body %>
   </div>
 
   <div class="field">
-    <%= form.label :account_id %>
-    <%= form.text_field :account_id %>
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :active %>
+    <%= form.check_box :active %>
   </div>
 
   <div class="actions">
