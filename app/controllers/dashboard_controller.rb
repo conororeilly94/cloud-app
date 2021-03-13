@@ -2,6 +2,12 @@ class DashboardController < ApplicationController
   before_action :set_sidebar
 
   def index
+    @properties = Property.all
+  end
+
+  def show
+    @agent = @property.account
+    @agent_properties = Property.where(account_id: @agent.id).where.not(id: @property.id)
   end
 
   def profile

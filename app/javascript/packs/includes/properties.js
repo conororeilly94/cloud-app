@@ -46,3 +46,4 @@ $('#contact-modal').on('show.bs.modal', function (event) {
     var modal = $(this);
   });
 });
+// $(document).on("page:load ready", loaded);
