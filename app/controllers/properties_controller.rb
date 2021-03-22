@@ -9,6 +9,11 @@ class PropertiesController < ApplicationController
     @properties = Property.all
   end
 
+  def index
+    @q = Property.search(params[:q])
+    @properties = @q.result
+  end
+
   # GET /properties/1 or /properties/1.json
   def show
     @agent = @property.account

@@ -1,5 +1,11 @@
 <h1 class="h3">Properties</h1>
-
+<br/>
+<%= search_form_for @q do |f| %>
+  <%= f.label :address_cont %>
+  <%= f.search_field :address_cont %>
+  <%= f.submit name:'' %>
+<% end %>
+<br/>
 <table class="table table-striped">
   <thead>
     <tr>
