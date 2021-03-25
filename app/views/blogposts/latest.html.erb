@@ -14,11 +14,11 @@
         <p>No posts to display</p>
     <% else %>
         <% @blogposts.each do |blogpost| %>
-            <div class="row">
+            <div class="row border">
                 <div class="col">
-                    <h2><%= blogpost.title %></h2>
-                    <p><%= blogpost.summary %></p>
-                    <%= link_to "Read more", blogpost_path(blogpost), class: "btn btn-success" %>
+                    <h2 class="mt-2 "><%= blogpost.title %></h2>
+                    <p class="mt-2"><%= blogpost.summary %></p>
+                    <%= link_to "Read more", blogpost_path(blogpost), :style => "margin-bottom: 16px", class: "btn btn-success" %>
                 </div>
             </div>
         <% end %>

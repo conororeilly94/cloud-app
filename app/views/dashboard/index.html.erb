@@ -1,19 +1,25 @@
-<main role="main" id="home-banner">
+<main role="main" id="dash-banner">
 
     <div class="cover-container d-flex h-100 p-1 mx-auto flex-column">
+     <% if @account %>
+        <%= @account.email %>
+      <% end %>
 
         <h1 class="cover-heading">Welcome to Property Finder</h1>
         <p class="lead">View, edit and delete properties from the Properties tab</p>
         <p class="lead">View and Edit your Account from the Settings section </p>
-        <p class="lead">
-          <a href="" class="btn btn-lg btn-secondary">Learn more</a>
-        </p>
-      
 
     </div>
     </main>
 
+    <p class="lead mt-4">Property Finder take on the property search for their purchaser clients. They are responsible for investigating the whole of the property market to match up to their clients' preferences, for pre-inspection, for selecting properties with the clients through the on-line client area, for various checks, for negotiation and they support their clients from the very start until the signature of the authentic deed.</p>
 
+    <p class="lead mt-4">Property Hunter finds the ideal property for you, in the best possible conditions, and supports you throughout the purchase process. With a well-established methodology your property can be purchased quickly and safely, with no worries.</p>
+    
+    <p class="lead mt-4">Do you want to benefit from the best opportunities, and invest safely in the property market? You can rely on our complete support through the whole of the purchase process, as well as on our reliable, competent partners: solicitors, banks, experts, businesses, architects, etc.</p>
+    
+    <p class="lead mt-4">Are you not in the area to find your accommodation yourself? Do you not have time, or know the city well enough? Property Hunter quickly and efficiently finds the property you're looking for.</p>
+    
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

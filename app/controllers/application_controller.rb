@@ -9,4 +9,10 @@ class ApplicationController < ActionController::Base
         devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :details, :url, :telephone, :cover_image])
         devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
     end
+
+    def index
+        if session[:account_id]
+            @accounts = Account.find(session[:account_id])
+    end
+end
 end

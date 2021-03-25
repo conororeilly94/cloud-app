@@ -22,15 +22,17 @@
   <tbody>
     <% @properties.each do |property| %>
       <tr>
-        <td><%= property.name %></td>
-        <td><%= property.address %></td>
-        <td><%= property.price %></td>
-        <td><%= property.rooms %></td>
-        <td><%= property.bathrooms %></td>
-        <td><%= property.account.first_name + ' ' + property.account.last_name  %></td>
-        <td><%= link_to 'Show', property, class: 'btn btn-success' %></td>
-        <td><%= link_to 'Edit', edit_property_path(property), class: 'btn btn-warning' %></td>
-        <td><%= link_to 'Destroy', property, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= property.name %></td>
+          <td><%= property.address %></td>
+          <td><%= property.price %></td>
+          <td><%= property.rooms %></td>
+          <td><%= property.bathrooms %></td>
+          <td><%= property.account.first_name + ' ' + property.account.last_name  %></td>
+          <% if property.account == current_account %>
+            <td><%= link_to 'Show', property, class: 'btn btn-success' %></td>
+            <td><%= link_to 'Edit', edit_property_path(property), class: 'btn btn-warning' %></td>
+            <td><%= link_to 'Destroy', property, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
       </tr>
     <% end %>
   </tbody>

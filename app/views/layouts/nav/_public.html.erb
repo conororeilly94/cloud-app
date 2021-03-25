@@ -16,9 +16,9 @@
       <li class="nav-item">
         <%= link_to "Blog Posts", blog_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
+      <%# <li class="nav-item">
         <a class="nav-link" href="#">Contact</a>
-      </li>
+      </li> %>
       <% if account_signed_in? %>
       <li class="nav-item">
         <%= link_to "Log out", destroy_account_session_path, method: :delete, class: "nav-link" %>
